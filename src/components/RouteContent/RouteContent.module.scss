@@ -1,0 +1,13 @@
+@use "/src/styles/variables.scss";
+
+.root {
+	@include variables.fadeIn(5s);
+	height: 100%;
+}
+
+.error {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}

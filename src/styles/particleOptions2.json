@@ -1,0 +1,20 @@
+{
+	"polygon": {
+		"enable": true,
+		"url": "/infinity.svg",
+		"type": "inline",
+		"draw": { "enable": false, "lineColor": "rgb(0,0,0)" },
+		"inline": { "arrangement": "perPoint" },
+		"scale": 20
+	},
+	"particles": {
+		"color": { "value": "rgb(0,0,0)" },
+		"links": {
+			"enable": true,
+			"color": "rgb(0,0,0)",
+			"frequency": 0.5,
+			"distance": 100,
+			"number": { "value": 100, "limit": 100 }
+		}
+	}
+}

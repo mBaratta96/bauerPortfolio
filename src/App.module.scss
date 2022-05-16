@@ -1,0 +1,11 @@
+@use "./styles/variables.scss";
+
+.root {
+	background: variables.$background-color;
+	font-family: variables.$default-font;
+	color: variables.$text-color;
+}
+
+.particles {
+	@include variables.fadeIn(10s);
+}

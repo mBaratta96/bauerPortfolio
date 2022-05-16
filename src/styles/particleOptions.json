@@ -1,0 +1,29 @@
+{
+	"background": { "color": "", "size": "50%", "repeat": "no-repeat" },
+	"particles": {
+		"move": {
+			"speed": 0.2,
+			"enable": true,
+			"direction": "top-left"
+		},
+		"number": {
+			"density": { "enable": true, "area": 250 },
+			"value": 250,
+			"limit": 500
+		},
+		"shape": { "type": ["circle", "edge"] },
+		"size": { "value": 2, "random": true },
+		"color": { "value": "#4C5C68" },
+		"links": {
+			"enable": true,
+			"color": { "value": "#1985A1" },
+			"frequency": 0.5,
+			"opacity": 0.2,
+			"width": 0.5,
+			"distance": 150
+		},
+		"reduceDuplicates": true
+	},
+	"presets": ["stars"],
+	"autoPlay": true
+}

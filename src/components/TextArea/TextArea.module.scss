@@ -1,0 +1,76 @@
+@use "/src/styles/variables.scss";
+
+.root {
+	background-color: variables.$text-area-background-color;
+	margin: 24px;
+	padding-left: 24px;
+	padding-right: 24px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	outline: solid 24px variables.$text-area-background-color;
+	position: relative;
+	.wrapper {
+		overflow-y: auto;
+		scrollbar-width: thin;
+	scrollbar-color: variables.$text-area-ornament-color #c5c3c600;
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: variables.$text-area-ornament-color;
+			border-radius: 20px;
+			border: 5px solid #d5d4d500;
+		}
+		&::-webkit-scrollbar-track {
+			background: #d5d4d500;
+		}
+	}
+	.border {
+		&Left {
+			&::after {
+				@include variables.border-position($top: 10%);
+				height: 80%;
+				border-left: variables.$border-style;
+			}
+			&::before {
+				@include variables.corner-position();
+			}
+		}
+		&Top {
+			&::after {
+				@include variables.border-position($left: 10%);
+				width: 80%;
+				border-top: variables.$border-style;
+			}
+			&::before {
+				@include variables.corner-position($left: 100%, $transform: translateX(-1em));
+			}
+		}
+		&Bottom {
+			&::after {
+				@include variables.border-position($top: 100%, $left: 10%);
+				width: 80%;
+				border-bottom: variables.$border-style;
+			}
+			&::before {
+				@include variables.corner-position($top: 100%, $transform: translateY(-1em));
+			}
+		}
+		&Right {
+			&::after {
+				height: 80%;
+				@include variables.border-position($top: 10%, $left:100%);
+				border-right: variables.$border-style;
+			}
+			&::before {
+				@include variables.corner-position($top: 100%, $left:100%, $transform: translate(-1em, -1em));
+			}
+		}
+	}
+
+	p {
+		font-size: 18px;
+	}
+}

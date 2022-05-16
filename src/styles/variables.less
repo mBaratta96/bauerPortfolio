@@ -1,0 +1,41 @@
+@use (css) url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+
+@color-black: #222121;
+@color-grey-gradient: rgba(250, 193, 54, 0);
+@text-color: #252525;
+@background-color: #E5E5E5;
+@text-area-ornament-color: rgb(124, 124, 124);
+@text-area-background-color: #c5c3c680;
+@default-font: Alice, serif;
+@border-style: 2px dashed @text-area-ornament-color;
+
+.random(@min, @max) {
+	@random: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+}
+
+.fadeIn(@duration: 10s) {
+	animation: fadein @duration;
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+.border-position(@left:0, @top: 0) {
+	left: @left;
+	top: @top;
+	content: "";
+	position: absolute;
+}
+
+.corner-position(@left:0, @top:0, @transform: none){
+	content: "▩";
+	position: absolute;
+	left: @left;
+	top: @top;
+	transform: @transform;
+	color:@text-area-ornament-color;
+}
+
+
