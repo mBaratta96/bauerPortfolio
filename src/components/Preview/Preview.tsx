@@ -1,6 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Suspense } from "react";
 import classes from "./Preview.module.scss";
 import { useSpring, animated } from "react-spring";
+// useImage for more efficient image loading
+import { useImage } from "react-image";
+import { ImSpinner2 } from "react-icons/im";
 
 interface previewProps {
 	setSlide: React.Dispatch<React.SetStateAction<number>>;
@@ -17,12 +20,19 @@ const getInitialColumn = (imagesLength: number): number => {
 const Preview = (props: previewProps): JSX.Element => {
 	const { setSlide, children: images } = props;
 	const initialColumn = getInitialColumn(images.length);
+
 	const previewContent = images.map(
 		(image: string, index: number): JSX.Element => {
 			const [{ scale }, set] = useSpring(() => ({
 				scale: 1,
 				delay: 50,
 			}));
+			const Image = () => {
+				const { src } = useImage({
+					srcList: new URL(image, import.meta.url).href,
+				});
+				return <animated.img style={{ scale }} src={src} />;
+			};
 			return (
 				<div
 					key={index}
@@ -34,10 +44,15 @@ const Preview = (props: previewProps): JSX.Element => {
 						gridColumnStart: initialColumn + index,
 					}}
 				>
-					<animated.img
-						style={{ scale }}
-						src={new URL(image, import.meta.url).href}
-					></animated.img>
+					<Suspense
+						fallback={
+							<div>
+								<ImSpinner2 size="2em" />
+							</div>
+						}
+					>
+						<Image />
+					</Suspense>
 				</div>
 			);
 		}

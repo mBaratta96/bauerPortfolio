@@ -17,6 +17,6 @@ export default defineConfig((configEnv) => {
 			chunkSizeWarningLimit: 1600,
 			target: "es2020",
 		},
-		base: "/BauerPortfolio/",
+		base: "/bauerPortfolio/",
 	};
 });

@@ -8,6 +8,8 @@ import Slide from "../../components/Slide";
 import { parse } from "papaparse";
 import { sortBy } from "underscore";
 import contentString from "./fountain/content.csv?raw";
+import scriptIta from "./scriptIta.pdf";
+import scriptEng from "./scriptEng.pdf";
 
 interface newShortType {
 	index: string;
@@ -39,6 +41,7 @@ const parseScript = (scriptString: string) => {
 const scripts = [scene1Script, scene2Script, scene3Script].map(
 	(scriptString, index) => {
 		const script = parseScript(scriptString);
+		// add scene number in header
 		const tempDiv = document.createElement("div");
 		tempDiv.innerHTML = script;
 		const sceneHeadings = tempDiv.querySelectorAll(
@@ -96,7 +99,7 @@ const title = (
 			className={classes.link}
 			target="_blank"
 			rel="noreferrer noopener"
-			href="https://drive.google.com/file/d/1ua87R9Hru6LHG-lzxUMEjm09tn4xXE8A/view?usp=sharing"
+			href={scriptIta}
 		>
 			here
 		</a>{" "}
@@ -105,7 +108,7 @@ const title = (
 			className={classes.link}
 			target="_blank"
 			rel="noreferrer noopener"
-			href="https://drive.google.com/file/d/1sHXwyvsPBU8TkDXmcrVFqGqJHewbjSqo/view?usp=sharing"
+			href={scriptEng}
 		>
 			here
 		</a>
