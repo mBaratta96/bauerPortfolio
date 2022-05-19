@@ -85,7 +85,7 @@ const content = sortBy(
 	);
 });
 
-const media = ["synopsis", "scene1", "scene2", "scene3"].map((item) => {
+const media = ["poster", "scene1", "scene2", "scene3"].map((item) => {
 	return {
 		slide: <img src={new URL(`./images/${item}.webp`, import.meta.url).href} />,
 		preview: new URL(`./images/${item}.webp`, import.meta.url).href,
