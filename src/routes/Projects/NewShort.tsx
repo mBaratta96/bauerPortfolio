@@ -117,7 +117,7 @@ const title = (
 );
 
 const subtitle =
-	"This is a collection of visual ideas for scenes taken from a new short script I wrote. Here, you can find the synopsis, some context for the selected scenes, and the corresponding excerpt of the script.";
+	"This is a collection of visual ideas for scenes taken from a new short script I wrote. Here, you can find the synopsis, some context for each scene, and the corresponding excerpt of the script.";
 
 const NewShort = () => {
 	return (
