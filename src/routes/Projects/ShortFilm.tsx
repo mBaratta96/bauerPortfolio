@@ -101,7 +101,6 @@ const ShortFilm = () => {
 			></Slide>
 		</Fragment>
 	);
-	return <div>Projects</div>;
 };
 
 export default ShortFilm;
